@@ -1,5 +1,4 @@
 const fs = require('fs');     // imported for writing files 
-const request = require('http');
 
 const requestHandler = (request, response) => {
   const url = request.url;
