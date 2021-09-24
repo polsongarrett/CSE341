@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>
+          <%= title %>
+        </h1>
+      </div>
+    </div>
+    <div class="container">
+      <form action="/ta02/addUser" method="POST">
+        <input type="text" name="nameInput">
+        <button type="submit">Add Name</button>
+      </form>
+      <form action="/ta02/removeUser" method="POST">
+        <input type="text" name="nameRemove">
+        <button type="submit">Remove Name</button>
+      </form>
+      <p><%= message %></p>
+      <ul>
+        <% for(let name of nameArray) { %>
+          <li><%= name %></li>
+        <% } %>
+      </ul>
+    </div>
+
+
+</body>
+
+</html>
