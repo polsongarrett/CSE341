@@ -3,22 +3,31 @@
 
 <head>
   <% include ../includes/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/ta03.css"/>
 </head>
 
 <body>
   <% include ../includes/nav.ejs %>
-    <div class="jumbotron text-center">
-      <div class="container">
-        <h1>
-          <%= title %>
-        </h1>
-        <p>This is the placeholder for Team Activity 03</p>
-      </div>
-    </div>
+  <div class="jumbotron text-center">
     <div class="container">
-
+      <h1>
+        <%= title %>
+      </h1>
     </div>
+  </div>
 
+  <div class="centered">
+    <form action="/ta03/search" method="GET">
+      <input type="text" name="keyword">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="container">
+    <% for( let book of filterMesh) { %>
+    <% include ../partials/ta03.ejs %>
+    <% } %>
+  </div>
 
 </body>
 
